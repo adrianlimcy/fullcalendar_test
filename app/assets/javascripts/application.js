@@ -23,6 +23,7 @@
 //= require chartkick
 //= require jquery.mCustomScrollbar.concat.min
 //= require jquery.mousewheel.min
-//= require cocoon
+//= require moment
+//= require fullcalendar
 //= require turbolinks
 //= require_tree .

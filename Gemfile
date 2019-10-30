@@ -36,16 +36,20 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'slim', '~> 4.0', '>= 4.0.1'
+
+gem 'jquery-datatables-rails', '~> 3.4'
+gem 'chartkick', '~> 3.2', '>= 3.2.1'
+
+
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'bootstrap', '~> 4.3.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'jquery-turbolinks', '~> 2.1'
-gem 'jquery-datatables-rails', '~> 3.4'
-gem 'simple_form', '~> 5.0', '>= 5.0.1'
-gem 'chartkick', '~> 3.2', '>= 3.2.1'
-gem 'cocoon', '~> 1.2', '>= 1.2.9'
+gem 'fullcalendar-rails', '~> 3.9'
+gem 'momentjs-rails', '~> 2.20', '>= 2.20.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

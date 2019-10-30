@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. downloading & renaming all the files into the vendor folder
+  - fullcalendar-4.3.1 > packages > core > main.min.js => fullcalendar.min.js
+  - fullcalendar-4.3.1 > packages > core > main.min.css => fullcalendar.min.css
+  - fullcalendar-4.3.1 > packages > moment > main.min.js => moment.min.js
 
-Things you may want to cover:
+2. create the sample event scaffold
+  - rails generate scaffold Event title:string description:text start_date:datetime end_date:datetime
+  - rails db:migrate
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+3. didn't work, trying the gem again
