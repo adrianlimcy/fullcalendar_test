@@ -1,7 +1,5 @@
-initialize_calendar = undefined
-
-initialize_calendar = ->
-  $('.calendar').each ->
+eventCalendar = ->
+  $('#event_calendar').each ->
     calendar = $(this)
     calendar.fullCalendar
       header:
@@ -33,4 +31,9 @@ initialize_calendar = ->
     return
   return
 
-$(document).on 'turbolinks:load', initialize_calendar
+clearCalendar = ->
+  $('#event_calendar').html ''
+  return
+
+$(document).on 'turbolinks:load', eventCalendar
+$(document).on 'turbolinks:before-cache', clearCalendar

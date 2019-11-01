@@ -15,6 +15,10 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /events/1/edit
