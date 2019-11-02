@@ -4,10 +4,10 @@
 
 <div id="event_calendar"></div>
 
-<div id="remote_container">
+<!-- <div id="remote_container">
   <div id="new_event"></div>
   <div id="edit_event"></div>
-</div>
+</div> -->
 
 <table>
   <thead>
@@ -28,7 +28,7 @@
         <td><%= event.start_date %></td>
         <td><%= event.end_date %></td>
         <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Edit', edit_event_path(event), remote: true %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
