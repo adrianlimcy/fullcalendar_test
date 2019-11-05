@@ -1,0 +1,29 @@
+/ == simple_form_for(@event) do |f|
+/   == f.error_notification
+/   == f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+/
+/   .form-inputs
+/     == f.input :title
+/     == f.input :start_date
+/     == f.input :end_date
+/
+/   .form-actions
+/     == f.button :submit
+
+
+== simple_form_for @event, remote: true do |f|
+  .form-inputs
+    == f.input :title
+    / == f.input :start_date, input_html: { class: "form-control input-sm daterange" }, as: :string
+    == f.input :date_range, input_html: { class: "form-control input-sm date-range-picker" }
+    == f.input_field :start_date, as: :hidden, value: Date.today, class: 'form-control input-sm start_hidden'
+    == f.input_field :end_date, as: :hidden, value: Date.today, class: 'form-control input-sm end_hidden'
+
+  .form-actions
+    == f.button :submit
+    == link_to 'Delete',
+              event,
+              method: :delete,
+              class: 'btn btn-danger',
+              data: { confirm: 'Are you sure?' },
+              remote: true unless @event.new_record?

@@ -48,8 +48,10 @@ gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'bootstrap', '~> 4.3.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'jquery-turbolinks', '~> 2.1'
+gem 'simple_form', '~> 5.0', '>= 5.0.1'
 gem 'fullcalendar-rails', '~> 3.9'
 gem 'momentjs-rails', '~> 2.20', '>= 2.20.1'
+gem 'bootstrap-daterangepicker-rails', '~> 3.0', '>= 3.0.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

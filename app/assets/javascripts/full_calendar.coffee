@@ -1,3 +1,18 @@
+date_range_picker = undefined
+
+date_range_picker = ->
+  $('.date-range-picker').each ->
+    $(this).daterangepicker {
+      timePicker: true
+      timePickerIncrement: 30
+      alwaysShowCalendars: true
+    }, (start, end, label) ->
+      $('.start_hidden').val start.format('YYYY-MM-DD HH:mm')
+      $('.end_hidden').val end.format('YYYY-MM-DD HH:mm')
+      return
+    return
+  return
+
 eventCalendar = ->
   $('#event_calendar').each ->
     calendar = $(this)
@@ -13,6 +28,11 @@ eventCalendar = ->
       events: '/events.json'
       select: (start, end) ->
         $.getScript '/events/new', ->
+          $('#event_date_range').val moment(start).format('MM/DD/YYYY HH:mm') + ' - ' + moment(end).format('MM/DD/YYYY HH:mm')
+          date_range_picker()
+          $('.start_hidden').val moment(start).format('YYYY-MM-DD HH:mm')
+          $('.end_hidden').val moment(end).format('YYYY-MM-DD HH:mm')
+          return
         calendar.fullCalendar 'unselect'
         return
       eventDrop: (event, delta, revertFunc) ->
@@ -35,11 +55,14 @@ eventCalendar = ->
             return
           data: event_data
           type: 'PATCH'
-          # success: (response) ->
-          # console.log 'response'
         return
       eventClick: (event, jsEvent, view) ->
         $.getScript event.edit_url, ->
+          $('#event_date_range').val moment(event.start).format('MM/DD/YYYY HH:mm') + ' - ' + moment(event.end).format('MM/DD/YYYY HH:mm')
+          date_range_picker()
+          $('.start_hidden').val moment(event.start).format('YYYY-MM-DD HH:mm')
+          $('.end_hidden').val moment(event.end).format('YYYY-MM-DD HH:mm')
+          return
         return
     return
   return
@@ -47,6 +70,16 @@ eventCalendar = ->
 clearCalendar = ->
   $('#event_calendar').html ''
   return
+clear_date_range_picker = ->
+  $('.date-range-picker').html ''
+  return
 
-$(document).on 'turbolinks:load', eventCalendar
-$(document).on 'turbolinks:before-cache', clearCalendar
+$(document).on 'turbolinks:load', ->
+  date_range_picker()
+  eventCalendar()
+  return
+
+$(document).on 'turbolinks:before-cache', ->
+  clearCalendar()
+  clear_date_range_picker()
+  return

@@ -25,5 +25,6 @@
 //= require jquery.mousewheel.min
 //= require moment
 //= require fullcalendar
+//= require daterangepicker
 //= require turbolinks
 //= require_tree .
