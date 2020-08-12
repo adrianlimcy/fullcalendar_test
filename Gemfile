@@ -40,7 +40,7 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'slim', '~> 4.0', '>= 4.0.1'
 
 gem 'jquery-datatables-rails', '~> 3.4'
-gem 'chartkick', '~> 3.2', '>= 3.2.1'
+gem 'chartkick', '~> 3.4'
 
 
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
